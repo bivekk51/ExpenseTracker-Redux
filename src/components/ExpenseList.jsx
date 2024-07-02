@@ -7,16 +7,16 @@ const ExpenseList = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="space-y-4">
+        <div className="mt-6 space-y-4">
             {expenses.map((expense) => (
-                <div key={expense.id} className="flex justify-between items-center p-2 border rounded">
+                <div key={expense.id} className="flex justify-between items-center p-4 bg-white rounded-lg shadow-md">
                     <div>
-                        <p className="text-lg">{expense.name}</p>
-                        <p className="text-gray-500">${expense.amount}</p>
+                        <p className="text-xl font-semibold">{expense.name}</p>
+                        <p className="text-gray-600">${expense.amount}</p>
                     </div>
                     <button
                         onClick={() => dispatch(removeExpense(expense.id))}
-                        className="bg-red-500 text-white px-4 py-2 rounded"
+                        className="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition duration-300"
                     >
                         Delete
                     </button>

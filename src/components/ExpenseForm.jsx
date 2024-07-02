@@ -15,14 +15,15 @@ const ExpenseForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-6 bg-white p-6 rounded-lg shadow-md">
             <div>
                 <label className="block text-gray-700">Name</label>
                 <input
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="mt-1 p-2 w-full border rounded"
+                    className="mt-1 p-2 w-full border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    placeholder="Expense name"
                 />
             </div>
             <div>
@@ -31,10 +32,11 @@ const ExpenseForm = () => {
                     type="number"
                     value={amount}
                     onChange={(e) => setAmount(e.target.value)}
-                    className="mt-1 p-2 w-full border rounded"
+                    className="mt-1 p-2 w-full border rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    placeholder="Expense amount"
                 />
             </div>
-            <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+            <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
                 Add Expense
             </button>
         </form>
